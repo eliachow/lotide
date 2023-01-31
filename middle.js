@@ -18,6 +18,7 @@ middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
 
 */
 
+// TEST/ASSERTION FUNCTIONS
 const eqArrays = function (arrayOne, arrayTwo) {
   for (let i = 0; i < arrayOne.length; i++) {
     if (arrayOne[i] !== arrayTwo[i]) {
@@ -35,55 +36,31 @@ const assertArraysEqual = function (arr1, arr2) {
   }
 };
 
+// ACTUAL FUNCTION
 const middle = function (array) {
-  let result = [];
+  const mid = Math.ceil(array.length / 2) - 1;
+  //1-2 array
   if (array.length < 3) {
-    console.log(result);
-  } else if (array.length % 2 === 1) {
-    //odd numbers
-    let middleOfArray = array.length / 2;
-    middleOfArray = Math.round(middleOfArray) - 1;
-    middleOfArray = array[middleOfArray];
-    console.log([middleOfArray]);
-  } else if (array.length % 2 === 0) {
-    //even numbers
-    let middleOfEvenArrayTop = array.length / 2;
-    middleOfEvenArrayTop = array[middleOfEvenArrayTop];
-    let middleOfEvenArrayBottom = array.length / 2 - 1;
-    middleOfEvenArrayBottom = array[middleOfEvenArrayBottom];
-    console.log([middleOfEvenArrayBottom, middleOfEvenArrayTop]);
+    return [];
+  }
+  //even array
+  if (array.length % 2 === 0) {
+    return [array[mid], array[mid + 1]];
+  }
+  //odd array
+  if (array.length % 2 !== 0) {
+    return [array[mid]];
   }
 };
 
-//Test
-middle([1]); // => []
-middle([1, 2]); // => []
-
-middle([1, 2, 3]); // => [2]
-middle([1, 2, 3, 4, 5]); // => [3]
-middle([2, 4, 6, 8, 10, 12, 14]);
-
-middle([1, 2, 3, 4]); // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]); // => [3, 4]
-middle([2, 4, 6, 8, 10, 12, 14, 16]);
-
-/*
-
-// TEST/ASSERTION FUNCTIONS
-const eqArrays = function(...) {
-  //...
-}
-
-const assertArraysEqual = function(actual, expected) {
-  //...
-}
-
-// ACTUAL FUNCTION
-const middle = function(array) {
-  //...
-}
-
 // TEST CODE
-// ...
+assertArraysEqual(middle([1]), []); // => []
+assertArraysEqual(middle([1, 2]), []); // => []
 
-*/
+assertArraysEqual(middle([1, 2, 3]), [2]); // => [2]
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // => [3]
+assertArraysEqual(middle([2, 4, 6, 8, 10, 12, 14]), [8, 10]);
+
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => [2, 3]
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // => [3, 4]
+assertArraysEqual(middle([2, 4, 6, 8, 10, 12, 14, 16]), [8, 10]); // => [8, 10]
