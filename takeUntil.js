@@ -50,18 +50,37 @@ const assertArraysEqual = function (arr1, arr2) {
 };
 
 // Function Code:
-
+/*
 const takeUntil = function (array, callback) {
   const resultArray = [];
   // loop through the items of the array
   for (let item of array) {
-    // push the items to the empty array
-    //resultArray.push(item);
     // if the callback function returns true
     if (callback(item) === true) {
       // stop the loop
       break;
     } else {
+      // push the items to the empty array
+
+      resultArray.push(item);
+    }
+  }
+  return resultArray;
+};
+*/
+
+//arrow function
+const takeUntil = (array, callback) => {
+  const resultArray = [];
+  // loop through the items of the array
+  for (let item of array) {
+    // if the callback function returns true
+    if (callback(item) === true) {
+      // stop the loop
+      break;
+    } else {
+      // push the items to the empty array
+
       resultArray.push(item);
     }
   }
