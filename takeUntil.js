@@ -56,13 +56,13 @@ const takeUntil = function (array, callback) {
   // loop through the items of the array
   for (let item of array) {
     // push the items to the empty array
-    resultArray.push(item);
+    //resultArray.push(item);
     // if the callback function returns true
     if (callback(item) === true) {
-      // remove the last item of the array (the item that returned true)
-      resultArray.pop();
       // stop the loop
       break;
+    } else {
+      resultArray.push(item);
     }
   }
   return resultArray;
