@@ -11,33 +11,53 @@ https://flex-web.compass.lighthouselabs.ca/workbooks/flex-m01w4/activities/371?j
 
 const assertArraysEqual = require('./assertArraysEqual');
 const assertEqual = require('./assertEqual');
-const assertObjectEqual = require('./assertObjectEqual');
-//const countOnly = require('./countOnly');
 const eqArrays = require('./eqArrays');
+const head = require('./head');
+const middle = require('./middle');
+const tail = require('./tail');
+//const assertObjectEqual = require('./assertObjectEqual');
+//const countOnly = require('./countOnly');
 //const eqObjects = require('./eqObjects');
 // const findKey = require('./findKey');
 // const findKeyByValue = require('./findKeyByValue');
 // const flatten = require('./flatten'); 
-const head = require('./head');
 // const letterPositions = require('./letterPositions');
 // const map = require('./map');
-const middle = require('./middle');
-const tail = require('./tail');
+
+
+// // ---- VERBOSE SYNTAX ----
+// module.exports = {
+//     assertArraysEqual: assertArraysEqual,
+//     assertEqual: assertEqual,
+//     eqArrays: eqArrays,
+//     head: head,
+//     middle: middle,
+//     tail: tail,
+//     // assertObjectEqual: assertObjectEqual,
+//     // countOnly: countOnly,
+//     // eqObjects: eqObjects,
+//     // findKey: findKey,
+//     // findKeyByValue: findKeyByValue,
+//     // flatten: flatten,
+//     // letterPositions: letterPositions,
+//     // map: map,
+// };
+
+//---- REFACTORING: PROPERTY VALUE SHORTHAND ---- 
 
 module.exports = {
-    assertArraysEqual: assertArraysEqual,
-    assertEqual: assertEqual,
-   // assertObjectEqual: assertObjectEqual,
+    assertArraysEqual,
+    assertEqual,
+    eqArrays,
+    head,
+    middle,
+    tail,
+    // assertObjectEqual: assertObjectEqual,
     // countOnly: countOnly,
-    eqArrays: eqArrays,
     // eqObjects: eqObjects,
-    findKey: findKey,
+    // findKey: findKey,
     // findKeyByValue: findKeyByValue,
     // flatten: flatten,
-    head: head,
     // letterPositions: letterPositions,
     // map: map,
-    middle: middle,
-    tail: tail,
-
 };
