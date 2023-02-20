@@ -9,16 +9,43 @@ Use assertEqual to write test cases for various scenarios.
 
 */
 
-// Assertion code
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ✅${actual} === ${expected}`);
-  } else {
-    console.assert(actual === expected, `🚫${actual} !== ${expected}`);
-  }
-};
+//---- ORIGINAL ----
 
-// Actual Code
+// // Assertion code
+// const assertEqual = function (actual, expected) {
+//   if (actual === expected) {
+//     console.log(`Assertion Passed: ✅${actual} === ${expected}`);
+//   } else {
+//     console.assert(actual === expected, `🚫${actual} !== ${expected}`);
+//   }
+// };
+
+// // Function Code
+// const findKeyByValue = function (channel, tvShow) {
+//   for (const genre in channel) {
+//     if (bestTVShowsByGenre[genre] === tvShow) {
+//       return genre;
+//     }
+//   }
+// };
+
+// // Test code
+// // bestTVShowsByGenre = channel
+// const bestTVShowsByGenre = {
+//   sci_fi: "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama: "The Wire",
+// };
+
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Simpsons"), undefined);
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+
+
+//---- REFACTORING FOR MODULE TESTING ----
+
+// Function Code
 const findKeyByValue = function (channel, tvShow) {
   for (const genre in channel) {
     if (bestTVShowsByGenre[genre] === tvShow) {
@@ -27,15 +54,11 @@ const findKeyByValue = function (channel, tvShow) {
   }
 };
 
-// Test code
-// bestTVShowsByGenre = channel
 const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama: "The Wire",
 };
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Simpsons"), undefined);
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+
+module.exports = findKeyByValue;
