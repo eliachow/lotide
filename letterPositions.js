@@ -8,23 +8,24 @@ For each letter, instead of returning just one number to represent its number of
 
 
 */
+//---- ORIGINAL ----
 
-//TEST CODE
-const assertEqual = function (actual, expected) {
-  if (isObjEqual(actual, expected)) {
-    console.log(
-      "Assertion Passed: ✅" +
-        JSON.stringify(actual) +
-        " === " +
-        JSON.stringify(expected)
-    );
-  } else {
-    console.assert(
-      actual === expected,
-      "🚫 " + JSON.stringify(actual) + " !== " + JSON.stringify(expected)
-    );
-  }
-};
+// //Assertion Test
+// const assertEqual = function (actual, expected) {
+//   if (isObjEqual(actual, expected)) {
+//     console.log(
+//       "Assertion Passed: ✅" +
+//       JSON.stringify(actual) +
+//       " === " +
+//       JSON.stringify(expected)
+//     );
+//   } else {
+//     console.assert(
+//       actual === expected,
+//       "🚫 " + JSON.stringify(actual) + " !== " + JSON.stringify(expected)
+//     );
+//   }
+// };
 
 /*
 //compare arrays
@@ -53,7 +54,52 @@ const isObjEqual = function (actual, expected) {
   return true;
 };
 
-//ACTUAL CODE
+// //FUNCTION CODE
+// const letterPositions = function (sentence) {
+//   const results = {};
+//   //loop through the string and return letters
+//   for (let i = 0; i < sentence.length; i++) {
+//     const character = sentence[i];
+//     //do not count spaces
+//     if (character !== " ") {
+//       //if element is in the object push the index into the array
+//       if (results[character]) {
+//         results[character].push(i); // array already exists so only need to push the index i
+//       } else {
+//         //if element is not in the object add the value index to the object
+//         results[character] = [i];
+//       }
+//     }
+//   }
+//   console.log("resutls: ", results);
+//   return results;
+// };
+
+
+// //TEST CODE
+// assertEqual(letterPositions("hello").e, [1]);
+
+// assertEqual(letterPositions("hello world").e, [1]);
+
+// assertEqual(letterPositions("hello"), { h: [0], e: [1], l: [2, 3], o: [4] });
+
+// assertEqual(letterPositions("lighthouse in the house"), {
+//   l: [0],
+//   i: [1, 11],
+//   g: [2],
+//   h: [3, 5, 15, 18],
+//   t: [4, 14],
+//   o: [6, 19],
+//   u: [7, 20],
+//   s: [8, 21],
+//   e: [9, 16, 22],
+//   n: [12],
+// });
+
+
+
+//---- REFACTORING TO USE MODULE TESTING ----
+//FUNCTION CODE
 const letterPositions = function (sentence) {
   const results = {};
   //loop through the string and return letters
@@ -70,25 +116,8 @@ const letterPositions = function (sentence) {
       }
     }
   }
-  console.log("resutls: ", results);
+  //console.log("resutls: ", results);
   return results;
 };
 
-assertEqual(letterPositions("hello").e, [1]);
-
-assertEqual(letterPositions("hello world").e, [1]);
-
-assertEqual(letterPositions("hello"), { h: [0], e: [1], l: [2, 3], o: [4] });
-
-assertEqual(letterPositions("lighthouse in the house"), {
-  l: [0],
-  i: [1, 11],
-  g: [2],
-  h: [3, 5, 15, 18],
-  t: [4, 14],
-  o: [6, 19],
-  u: [7, 20],
-  s: [8, 21],
-  e: [9, 16, 22],
-  n: [12],
-});
+module.exports = letterPositions;
