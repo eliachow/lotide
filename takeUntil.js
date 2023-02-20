@@ -31,23 +31,25 @@ console.log(results2);
 
 */
 
-//Assertion Test
-const eqArrays = function (arrayOne, arrayTwo) {
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+//---- ORIGINAL ----
 
-const assertArraysEqual = function (arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅ Assertion Passed; ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🚫 Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-};
+// //Assertion Test
+// const eqArrays = function (arrayOne, arrayTwo) {
+//   for (let i = 0; i < arrayOne.length; i++) {
+//     if (arrayOne[i] !== arrayTwo[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+// const assertArraysEqual = function (arr1, arr2) {
+//   if (eqArrays(arr1, arr2)) {
+//     console.log(`✅ Assertion Passed; ${arr1} === ${arr2}`);
+//   } else {
+//     console.log(`🚫 Assertion Failed: ${arr1} !== ${arr2}`);
+//   }
+// };
 
 // Function Code:
 /*
@@ -69,7 +71,52 @@ const takeUntil = function (array, callback) {
 };
 */
 
-//arrow function
+// //arrow function
+// const takeUntil = (array, callback) => {
+//   const resultArray = [];
+//   // loop through the items of the array
+//   for (let item of array) {
+//     // if the callback function returns true
+//     if (callback(item) === true) {
+//       // stop the loop
+//       break;
+//     } else {
+//       // push the items to the empty array
+
+//       resultArray.push(item);
+//     }
+//   }
+//   return resultArray;
+// };
+
+// Input
+
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5]; //-1 returns true, stopping condition
+// const results1 = takeUntil(data1, (x) => x < 0);
+// console.log(results1);
+
+// console.log("---");
+
+// const data2 = [
+//   "I've",
+//   "been",
+//   "to",
+//   "Hollywood",
+//   ",", // returns true, stopping condition
+//   "I've",
+//   "been",
+//   "to",
+//   "Redwood",
+// ];
+// const results2 = takeUntil(data2, (x) => x === ",");
+// console.log(results2);
+
+// console.log(assertArraysEqual(results1, [1, 2, 5, 7, 2]));
+// console.log(assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]));
+
+
+//---- REFACTORING FOR MODULE TESTING ----
+
 const takeUntil = (array, callback) => {
   const resultArray = [];
   // loop through the items of the array
@@ -87,27 +134,5 @@ const takeUntil = (array, callback) => {
   return resultArray;
 };
 
-// Input
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5]; //-1 returns true, stopping condition
-const results1 = takeUntil(data1, (x) => x < 0);
-console.log(results1);
-
-console.log("---");
-
-const data2 = [
-  "I've",
-  "been",
-  "to",
-  "Hollywood",
-  ",", // returns true, stopping condition
-  "I've",
-  "been",
-  "to",
-  "Redwood",
-];
-const results2 = takeUntil(data2, (x) => x === ",");
-console.log(results2);
-
-console.log(assertArraysEqual(results1, [1, 2, 5, 7, 2]));
-console.log(assertArraysEqual(results2, ["I've", "been", "to", "Hollywood"]));
+module.exports = takeUntil;
