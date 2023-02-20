@@ -16,7 +16,8 @@ const head = require('./head');
 const middle = require('./middle');
 const tail = require('./tail');
 //const assertObjectEqual = require('./assertObjectEqual');
-//const countOnly = require('./countOnly');
+const countOnly = require('./countOnly');
+const countLetters = require('./countLetters');
 //const eqObjects = require('./eqObjects');
 // const findKey = require('./findKey');
 // const findKeyByValue = require('./findKeyByValue');
@@ -53,7 +54,8 @@ module.exports = {
     middle,
     tail,
     // assertObjectEqual: assertObjectEqual,
-    // countOnly: countOnly,
+    countOnly,
+    countLetters,
     // eqObjects: eqObjects,
     // findKey: findKey,
     // findKeyByValue: findKeyByValue,
