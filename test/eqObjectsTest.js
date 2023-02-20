@@ -1,8 +1,8 @@
-//Testing using internal assertion tests
+const assertEqual = require('../assertEqual');
 const eqObjects = require('../eqObjects');
-const assertEqual = require('../assertEqual')
 
-// Test Code
+
+// // Test Code
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 assertEqual(eqObjects(shirtObject, anotherShirtObject), true); // true
@@ -33,9 +33,3 @@ assertEqual(
     eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject),
     false
 ); // => false
-
-//---- REFACTORING WITH MOCHA & CHAI TESTING ----
-// const assert = require('chai').assert;
-// const eqObjects = require('../eqObjects');
-
-
