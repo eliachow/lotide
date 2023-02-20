@@ -25,7 +25,7 @@ const flatten = require('./flatten');
 const letterPositions = require('./letterPositions');
 const map = require('./map');
 const takeUntil = require('./takeUntil');
-// const without = require('./withou');
+const without = require('./without');
 
 
 // // ---- VERBOSE SYNTAX ----
@@ -65,5 +65,5 @@ module.exports = {
     letterPositions,
     map,
     takeUntil,
-    //without,
+    without,
 };
