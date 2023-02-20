@@ -23,42 +23,43 @@ The tests should be written below the definition of your function.
 
 ---- TIPS ----
 Feel free to take a look at our solution for findKeyByValue. Some of the core logic will be the same (such as the looping over object keys part).
-
-
 */
-// ASSERTION TEST
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ✅${actual} === ${expected}`);
-  } else {
-    console.assert(actual === expected, `🚫${actual} !== ${expected}`);
-  }
-};
 
-// FUNCTION DEFINITION
+//---- ORIGINAL ----
 
-function findKey(object, callback) {
-  //object = stars, callback = countStars
-  //loop through the object to find the key
-  for (const item in object) {
-    if (callback(object[item])) {
-      //console.log("item: ", item); //output: item:  Blue Hill  item: Akaleri;  item: noma; item: elBulli; item: Ora;  item Akelarre;
-      return item; //do not need to input 'break' as 'return' will exit the function once the it statement is true
-    }
-  }
-}
+// // ASSERTION TEST
+// const assertEqual = function (actual, expected) {
+//   if (actual === expected) {
+//     console.log(`Assertion Passed: ✅${actual} === ${expected}`);
+//   } else {
+//     console.assert(actual === expected, `🚫${actual} !== ${expected}`);
+//   }
+// };
 
-const stars = {
-  "Blue Hill": { stars: 1 },
-  Akaleri: { stars: 3 },
-  noma: { stars: 2 },
-  elBulli: { stars: 3 },
-  Ora: { stars: 2 },
-  Akelarre: { stars: 3 },
-};
+// // FUNCTION DEFINITION
 
-//arrow function
-const countStars = (x) => x.stars === 2;
+// function findKey(object, callback) {
+//   //object = stars, callback = countStars
+//   //loop through the object to find the key
+//   for (const item in object) {
+//     if (callback(object[item])) {
+//       //console.log("item: ", item); //output: item:  Blue Hill  item: Akaleri;  item: noma; item: elBulli; item: Ora;  item Akelarre;
+//       return item; //do not need to input 'break' as 'return' will exit the function once the it statement is true
+//     }
+//   }
+// }
+
+// const stars = {
+//   "Blue Hill": { stars: 1 },
+//   Akaleri: { stars: 3 },
+//   noma: { stars: 2 },
+//   elBulli: { stars: 3 },
+//   Ora: { stars: 2 },
+//   Akelarre: { stars: 3 },
+// };
+
+// //arrow function
+// const countStars = (x) => x.stars === 2;
 
 //console.log("countStars: ", countStars); //output: countStars:  [Function: countStars]
 
@@ -74,5 +75,23 @@ const countStars2 = function (x) {
 
 // TEST CODE
 
-const foundbyKey = findKey(stars, countStars);
-console.log(assertEqual(foundbyKey, "noma")); // => "noma"
+// const foundbyKey = findKey(stars, countStars);
+// console.log(assertEqual(foundbyKey, "noma")); // => "noma"
+
+
+//---- REFACTORING FOR MODULE TESTING ---- 
+
+function findKey(object, callback) {
+  //object = stars, callback = countStars
+  //loop through the object to find the key
+  for (const item in object) {
+    if (callback(object[item])) {
+      //console.log("item: ", item); //output: item:  Blue Hill  item: Akaleri;  item: noma; item: elBulli; item: Ora;  item Akelarre;
+      return item; //do not need to input 'break' as 'return' will exit the function once the it statement is true
+    }
+  }
+}
+
+
+module.exports = findKey;
+
