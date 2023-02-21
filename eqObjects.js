@@ -82,7 +82,7 @@ https://flex-web.compass.lighthouselabs.ca/workbooks/flex-m01w2/activities/208?j
 const eqArrays = require('./eqArrays');
 
 //Function Code
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }
