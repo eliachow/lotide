@@ -3,7 +3,7 @@
 This function should take in a source array and a itemsToRemove array. It should return a new array with only those elements from source that are not present in the itemsToRemove array.
 */
 
-//---- ORIGINAL ---- 
+//---- ORIGINAL ----
 
 // //Asssertion Test
 // const eqArrays = function (arrayOne, arrayTwo) {
@@ -46,9 +46,9 @@ This function should take in a source array and a itemsToRemove array. It should
 //----REFACTORING ----
 
 //Function code
-const without = function (source, itemsToRemove) {
+const without = function(source, itemsToRemove) {
   let result = [];
-  for (let element of source) {
+  for (const element of source) {
     if (!itemsToRemove.includes(element)) {
       result.push(element);
     }
