@@ -70,7 +70,7 @@ middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
 //---- REFACTORING TO FOR MODULE TESTING ----
 
 //FUNCTION CODE
-const middle = function (array) {
+const middle = function(array) {
   const mid = Math.ceil(array.length / 2) - 1;
   //1-2 array
   if (array.length < 3) {
@@ -88,4 +88,4 @@ const middle = function (array) {
 
 
 //export function
-module.exports = middle
+module.exports = middle;
