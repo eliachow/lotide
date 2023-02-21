@@ -12,9 +12,6 @@ Create a function tail which returns the "tail" of an array: everything except f
 Your function should not modify the array that is passed in. It should return a new array.
 */
 
-
-
-
 // //refactorings: moving to module tailTest file
 // const assertEqual = function (actual, expected) {
 //   if (actual === expected) {
@@ -26,15 +23,15 @@ Your function should not modify the array that is passed in. It should return a 
 
 //const assertEqual = require('./assertEqual')
 
-const tail = function (array) {
-  //slice() removes the first element in the array
-  let result = (array.slice(1)).length;
-  //console.log("result: ", result)
-  //console.log("result.length: ", result.length)
-  return result
-  // console.log(array.slice(1));
-  // console.log(array);
-};
+// const tail = function (array) {
+//   //slice() removes the first element in the array
+//   let result = (array.slice(1)).length;
+//   //console.log("result: ", result)
+//   //console.log("result.length: ", result.length)
+//   return result
+//   // console.log(array.slice(1));
+//   // console.log(array);
+// };
 
 // Test Case: Check the original array
 // const words = ["Yo Yo", "Lighthouse", "Labs"];
@@ -44,4 +41,11 @@ const tail = function (array) {
 // assertEqual(words.length, 3); // original array should still have 3 elements!
 // assertEqual(tail([1,2,3]), 2)
 
-module.exports = tail
+//---- REFACTORING TO USE MODULE TESTING ----
+
+const tail = function(array) {
+  let result = (array.slice(1)).length;
+  return result;
+};
+
+module.exports = tail;
