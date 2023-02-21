@@ -46,7 +46,7 @@ Use assertEqual to write test cases for various scenarios.
 //---- REFACTORING FOR MODULE TESTING ----
 
 // Function Code
-const findKeyByValue = function (channel, tvShow) {
+const findKeyByValue = function(channel, tvShow) {
   for (const genre in channel) {
     if (bestTVShowsByGenre[genre] === tvShow) {
       return genre;
