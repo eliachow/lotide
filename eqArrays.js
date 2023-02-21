@@ -4,9 +4,11 @@ Implement a function eqArrays which takes in two arrays and returns true or fals
 👉 It's okay for eqArrays to not return true for nested arrays or arrays of objects that are identical. We will save this "deeper" problem for another day.
 
 ---- PSUEDOCODE ----
-1. 
+1.
 
 */
+
+//---- ORIGINAL ----
 // //refactoring: removing function definition and moving to test file
 // const assertEqual = function (actual, expected) {
 //   if (actual === expected) {
@@ -16,10 +18,26 @@ Implement a function eqArrays which takes in two arrays and returns true or fals
 //   }
 // };
 
-//refactoring: importing assertEqual 
+//refactoring: importing assertEqual
 //const assertEqual = require('./assertEqual');
 
-const eqArrays = function (arrayOne, arrayTwo) {
+// const eqArrays = function (arrayOne, arrayTwo) {
+//   for (let i = 0; i < arrayOne.length; i++) {
+//     if (arrayOne[i] !== arrayTwo[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
+// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => false
+// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
+// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => false
+
+//---- REFACTORING FOR MODULE TESTING ----
+
+const eqArrays = function(arrayOne, arrayTwo) {
   for (let i = 0; i < arrayOne.length; i++) {
     if (arrayOne[i] !== arrayTwo[i]) {
       return false;
@@ -28,10 +46,5 @@ const eqArrays = function (arrayOne, arrayTwo) {
   return true;
 };
 
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
-// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => false
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
-// assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => false
 
-
-module.exports = eqArrays
+module.exports = eqArrays;
