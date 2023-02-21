@@ -37,11 +37,11 @@
 //---- REFACTORING FOR MODULE TESTING ----
 
 //Function code
-const flatten = function (arrayToFlatten) {
+const flatten = function(arrayToFlatten) {
   let flattenedArray = [];
   for (let i = 0; i < arrayToFlatten.length; i++) {
     if (Array.isArray(arrayToFlatten[i])) {
-      for (let element of arrayToFlatten[i]) {
+      for (const element of arrayToFlatten[i]) {
         flattenedArray.push(element);
       }
     } else {
