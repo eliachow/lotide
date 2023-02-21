@@ -8,7 +8,7 @@ https://flex-web.compass.lighthouselabs.ca/workbooks/flex-m01w2/activities/205
   2. Create a function called countLetters.
     The function should take in a sentence (as a string) and then return a count of each of the letters in that sentence.
      For example, countLetters('LHL') should return results indicating that L appears twice, and H once.
-  3. Return an object: 
+  3. Return an object:
         {
           l: 1,
           i: 2,
@@ -110,7 +110,7 @@ https://flex-web.compass.lighthouselabs.ca/workbooks/flex-m01w2/activities/205
 //---- REFACTORING FOR MODULE TESTING ----
 //const assertEqual = require('./assertEqual')
 
-const countLetters = function (word) {
+const countLetters = function(word) {
   const result = {};
   for (const element of word) {
     if (element !== " ") {
