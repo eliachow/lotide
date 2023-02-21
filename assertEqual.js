@@ -1,13 +1,14 @@
-//Function implementation
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ✅${actual} === ${expected}`);
-  } else {
-    console.assert(actual === expected, `🚫${actual} !== ${expected}`);
-  }
-};
+//---- ORIGINAL ----
 
-//refactoring: moving to test/asssetEqualTest.js
+//Function implementation
+// const assertEqual = function (actual, expected) {
+//   if (actual === expected) {
+//     console.log(`Assertion Passed: ✅${actual} === ${expected}`);
+//   } else {
+//     console.assert(actual === expected, `🚫${actual} !== ${expected}`);
+//   }
+// };
+
 // //Test code
 // assertEqual("Lighthouse Labs", "Bootcamp");
 // assertEqual(1, 1);
@@ -16,5 +17,18 @@ const assertEqual = function (actual, expected) {
 // assertEqual(true, false);
 // assertEqual("6", "6");
 // assertEqual(6, "6");
+
+//---- REFACTORING FOR MODULE TESTING ----
+
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`Assertion Passed: ✅${actual} === ${expected}`);
+
+  } else {
+    console.assert(actual === expected, `🚫${actual} !== ${expected}`);
+
+  }
+};
+
 
 module.exports = assertEqual;
