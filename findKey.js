@@ -79,7 +79,7 @@ const countStars2 = function (x) {
 // console.log(assertEqual(foundbyKey, "noma")); // => "noma"
 
 
-//---- REFACTORING FOR MODULE TESTING ---- 
+//---- REFACTORING FOR MODULE TESTING ----
 
 function findKey(object, callback) {
   //object = stars, callback = countStars
