@@ -39,20 +39,20 @@ const eqArrays = function (arrayOne, arrayTwo) {
 };
 */
 
-//compare if objects are equal
-const isObjEqual = function (actual, expected) {
-  //compare if the object has the same number of keys
-  if (Object.keys(actual).length !== Object.keys(expected).length) {
-    return false;
-  }
-  //compare if the keys have the same values
-  for (let key in actual) {
-    if (actual[key] !== expected[key]) {
-      return false;
-    }
-  }
-  return true;
-};
+// //compare if objects are equal
+// const isObjEqual = function (actual, expected) {
+//   //compare if the object has the same number of keys
+//   if (Object.keys(actual).length !== Object.keys(expected).length) {
+//     return false;
+//   }
+//   //compare if the keys have the same values
+//   for (let key in actual) {
+//     if (actual[key] !== expected[key]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
 
 // //FUNCTION CODE
 // const letterPositions = function (sentence) {
@@ -100,23 +100,19 @@ const isObjEqual = function (actual, expected) {
 
 //---- REFACTORING TO USE MODULE TESTING ----
 //FUNCTION CODE
-const letterPositions = function (sentence) {
+const letterPositions = function(sentence) {
   const results = {};
-  //loop through the string and return letters
   for (let i = 0; i < sentence.length; i++) {
     const character = sentence[i];
     //do not count spaces
     if (character !== " ") {
-      //if element is in the object push the index into the array
       if (results[character]) {
-        results[character].push(i); // array already exists so only need to push the index i
+        results[character].push(i);
       } else {
-        //if element is not in the object add the value index to the object
         results[character] = [i];
       }
     }
   }
-  //console.log("resutls: ", results);
   return results;
 };
 
