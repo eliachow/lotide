@@ -76,7 +76,7 @@ That said, if a particular string is meant to be counted but does not exist in t
 
 // const assertEqual = require('./assertEqual')
 
-const countOnly = function (allItems, itemsToCount) {
+const countOnly = function(allItems, itemsToCount) {
   const results = {};
   for (const item of allItems) {
     if (itemsToCount[item]) {
